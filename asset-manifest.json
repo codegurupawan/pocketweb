@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pocketweb/static/css/main.136e3f07.css",
+    "main.js": "/pocketweb/static/js/main.cfa29d0d.js",
+    "static/js/787.f388c02f.chunk.js": "/pocketweb/static/js/787.f388c02f.chunk.js",
+    "index.html": "/pocketweb/index.html",
+    "main.136e3f07.css.map": "/pocketweb/static/css/main.136e3f07.css.map",
+    "main.cfa29d0d.js.map": "/pocketweb/static/js/main.cfa29d0d.js.map",
+    "787.f388c02f.chunk.js.map": "/pocketweb/static/js/787.f388c02f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.136e3f07.css",
+    "static/js/main.cfa29d0d.js"
+  ]
+}
