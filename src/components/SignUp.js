@@ -4,6 +4,9 @@ import  styles from "./SignUp.module.css"
 import InputControl from './InputControl'
 import { Link } from 'react-router-dom'
 
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase";
+
 export default function SignUp() {
 
   const [values, setValues] = useState({
@@ -12,9 +15,30 @@ export default function SignUp() {
     password: "",
   });
 
+  const [errorMsg, setErrormsg] = useState("");
+
+  const [submitButtonDisabled , setSubmitButtonDisabled] = useState(false);
+
   const handleSubmission = () => {
-    console.log(values);
-  }
+    if(!values.name || !values.email || !values.password){
+      setErrormsg("All fields are mandatory");
+      return;
+    }
+    setErrormsg("");
+
+    setSubmitButtonDisabled(true);
+    
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((res) => {
+        setSubmitButtonDisabled(false);
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        setSubmitButtonDisabled(false);
+        setErrormsg(err.message);
+    });
+  };
 
   return (
     <div className={styles.container}>
@@ -28,7 +52,7 @@ export default function SignUp() {
                           setValues((prev) => ({...prev, name: event.target.value}))} />
 
           <InputControl label="Email" type="email" 
-                        placeholder="Enter email addredd"
+                        placeholder="Enter email address"
                         onChange={(event) => 
                           setValues((prev) => ({...prev, email: event.target.value}))} />
 
@@ -38,7 +62,10 @@ export default function SignUp() {
                           setValues((prev) => ({...prev, password: event.target.value}))} /> 
 
           <div className={styles.footer}>
-            <button onClick={handleSubmission} type="">Sign Up</button>
+            
+            <b className={styles.error}>{errorMsg}</b>
+            <button onClick={handleSubmission} 
+                    disabled={submitButtonDisabled}>Sign Up</button>
 
             <p>Already have an account?{" "} <span>
               <Link to="/signin">Login</Link>

@@ -58,4 +58,12 @@
     text-decoration: none;
 }
 
+.footer .error {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #ff3300;
+}
 
+.footer button:disabled {
+    background-color: gray !important;
+}
