@@ -12,7 +12,7 @@ export default function Welcome() {
                 </div>
 
                 <div>
-                    <Link to="/login"> <button type="">Login</button> </Link>
+                    <Link to="/signin"> <button type="">Sign In</button> </Link>
                     <Link to="/signup"> <button type="">SignUp</button> </Link>
                 </div>
             </div>

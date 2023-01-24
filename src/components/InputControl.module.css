@@ -5,17 +5,18 @@
 }
 
 .container label {
-    font-weight: 500px;
+    font-weight: 800px;
     font-size: 1rem;
     color: #4b4b4b;
 }
 
 .container input {
     border-radius: 5px;
-    border: 1px solid #eee;
+    border: 1.5px solid #eee;
     outline: none;
     padding: 8px 15px;
     color: #000;
+    margin-bottom: 15px;
 }
 
 .container {
