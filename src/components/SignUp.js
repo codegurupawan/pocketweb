@@ -38,7 +38,7 @@ export default function SignUp() {
         updateProfile(user, {
           displayName: values.name,
         });
-        navigate("/signin");
+        navigate("/");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
@@ -82,7 +82,7 @@ export default function SignUp() {
               disabled={submitButtonDisabled}>Sign Up</button>
 
             <p>Already have an account?{" "} <span>
-              <Link to="/signin">Login</Link>
+              <Link to="/">Login</Link>
             </span></p>
 
           </div>
