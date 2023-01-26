@@ -1,8 +1,13 @@
 import React from 'react'
+import BlogCards from './BlogCards'
+import BlogData from './BlogData'
+import './Style.css'
 import { NavLink } from 'react-router-dom';
 
-const Home = () => {
+
+export default function Blog() {
   return (
+    <>
     <div className="container my-5">
       <div className="container-fluid nav_bg">
         <div className="row">
@@ -47,7 +52,27 @@ const Home = () => {
         </div>
       </div>
     </div>
+      <div className='my-5'>
+        <h1 className="text-center mrgn">Buy Or Sell Your Products</h1>
+
+        <div className='container-fluid mb-5'>
+          <div className='row'>
+            <div className="col-10 mx-auto">
+              <div className="row gy-4">
+                {
+                  BlogData.map((value, index) => {
+                    return <BlogCards
+                      key={index}
+                      imgsrc={value.imgsrc}
+                      title={value.title}
+                    />
+                  })
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
-
-export default Home;

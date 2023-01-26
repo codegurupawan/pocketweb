@@ -67,3 +67,7 @@
 .footer button:disabled {
     background-color: gray !important;
 }
+
+.heading {
+    text-align: center;
+}
